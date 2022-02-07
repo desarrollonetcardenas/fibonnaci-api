@@ -1,0 +1,1 @@
+{"version":3,"file":"calculate-fibonnaci.js","sourceRoot":"","sources":["../calculate-fibonnaci.ts"],"names":[],"mappings":";;;AAAA,MAAa,SAAS;IAClB,SAAS,CAAC,KAAa;QACnB,IAAG,KAAK,IAAI,CAAC;YACb,OAAO,KAAK,CAAC;QAEb,OAAO,IAAI,CAAC,SAAS,CAAC,KAAK,GAAC,CAAC,CAAC,GAAG,IAAI,CAAC,SAAS,CAAC,KAAK,GAAC,CAAC,CAAC,CAAC;IAC7D,CAAC;CACJ;AAPD,8BAOC"}
