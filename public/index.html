@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculate Fibonnaci!</h1>
+    <input type="text" id="txtValue" name="txtValue">
+    <button onclick="callApi()">Calculate</button>
+    <label for="">Fibonnaci Result: </label>
+    <label id="lblResult" for=""></label>
+
+    <script type="text/javascript">
+        function callApi() {
+            var req = new XMLHttpRequest();
+            const value = document.getElementById('txtValue').value;
+            const url = 'http://127.0.0.1';
+            const port = '2020' || '3030';
+
+            req.open('GET', `${url}:${port}/calculate-fibonnaci/${value}`, false);
+
+            req.onreadystatechange = (res) => {
+                if(req.readyState == 4) {
+                    if(req.status === 200) {
+                        const response = JSON.parse(req.response);
+                        document.getElementById('lblResult').innerHTML = response.result;
+                    }
+                }
+            };
+
+            req.send(null);
+        }
+    </script>
+</body>
+</html>
