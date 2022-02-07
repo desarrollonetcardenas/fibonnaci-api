@@ -6,13 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 const express_1 = __importDefault(require("express"));
-const path_1 = __importDefault(require("path"));
 const calculate_fibonnaci_1 = require("./calculate-fibonnaci");
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname) + '/public/index.html');
+    res.send("Hello there, this api is up and running...");
 });
 app.get('/calculate-fibonnaci/:inputNumber', (0, cors_1.default)(), (req, res) => {
     const fibonnaci = new calculate_fibonnaci_1.Fibonnaci();

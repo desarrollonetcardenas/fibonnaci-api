@@ -1,7 +1,6 @@
 import { config } from "dotenv";
 config();
 import express from "express";
-import path from "path";
 import { Fibonnaci } from "./calculate-fibonnaci";
 import cors from "cors";
 const app = express();
@@ -9,12 +8,12 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname) + '/public/index.html')
+    res.send("Hello there, this api is up and running...");
 });
 
 app.get('/calculate-fibonnaci/:inputNumber', cors(), (req, res) => {
     const fibonnaci = new Fibonnaci();
-    res.send({
+    res.send({ 
         result: fibonnaci.calculate(parseInt(req.params.inputNumber, 10))
     });
 })
